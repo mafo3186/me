@@ -19,7 +19,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PW}}
-          port: ${{ secrets.FTP_PORT}} 
-          protocol: sftp
+          port: 21
+          protocol: ftps
           server-dir: /            # Root-Verzeichnis der Domain
           local-dir: ./public/      # Website-Dateien
