@@ -22,4 +22,4 @@ jobs:
           password: ${{ secrets.FTP_PW }}
           local_path: ./dist/*      # Website-Ordner
           remote_path: /           # Root der Domain
-          #sftp_only: true
+          sftp_only: true
