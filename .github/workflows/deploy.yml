@@ -20,6 +20,6 @@ jobs:
           port: 2222
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PW }}
-          local_path: ./dist/*      # Website-Ordner
+          local_path: ./dist       # Website-Ordner
           remote_path: /           # Root der Domain
           sftp_only: true
