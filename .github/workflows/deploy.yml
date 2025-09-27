@@ -14,12 +14,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Deploy via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        uses: wlixcc/SFTP-Deploy-Action@v1.0.1
         with:
           server: ${{ secrets.FTP_HOST }}
           port: 2222
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PW }}
-          local_path: ./public/*   # Website-Ordner
+          local_path: ./dist/*      # Website-Ordner
           remote_path: /           # Root der Domain
-          sftp_only: true
+          #sftp_only: true
