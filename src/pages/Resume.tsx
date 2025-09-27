@@ -75,7 +75,7 @@ export default function Resume() {
     {
       title: 'M.Sc. Medieninformatik (berufsbegleitend)',
       institution: 'HSD',
-      period: '2023 – 2025 (Abschluss voraussichtlich 12/2025)',
+      period: '2023 – 2026 (Abschluss voraussichtlich 04/2026)',
       description: '65 ECTS‑Punkte (Ø = 1,0)',
       current: true,
     },
@@ -100,9 +100,9 @@ export default function Resume() {
   ];
 
   const skills = ['Python (ML/DL)', 'Java', 'Typescript', 'Javascript', 'React/Next.js', 'HTML5', 'CSS/Tailwind', 'SQL', 'Git', 'Adobe Suite'];
-  const methods = ['Scrum / Agile Methoden', 'Requirements Engineering', 'Workshop‑Moderation', 'Kommunikativ', 'Lösungsorientiert', 'Lernfähig'];
+  const methods = ['Scrum / Agile Methoden', 'Requirements Engineering', 'Workshop‑Moderation', 'Prompting', 'Kommunikativ', 'Lösungsorientiert', 'Lernfähig'];
   const languages = ['Deutsch (Muttersprache)', 'Englisch (C1)', 'Französisch (B2)', 'Spanisch (A2)'];
-  const interests = ['Reisen', 'Tanzen', 'Singen', 'Machine/Deep Learning', 'Sinnvolle Digitalisierung'];
+  const interests = ['Reisen', 'Tanzen', 'Singen', 'KI: Machine/Deep Learning', 'Sinnvolle Digitalisierung'];
 
   // State to control display of additional experiences
   const [showMoreExp, setShowMoreExp] = useState(false);

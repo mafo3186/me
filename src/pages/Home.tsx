@@ -48,18 +48,18 @@ export default function Home() {
       <div className="max-w-4xl mx-auto py-16 px-4">
         <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Über mich</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-          Als leidenschaftliche Entwicklerin und Wissenschaftlerin arbeite ich an der Schnittstelle
+          Als leidenschaftliche Entwicklerin, Wissenschaftlerin und Projektleiterin arbeite ich an der Schnittstelle
           von Webentwicklung, Data Science und Machine Learning. Ich liebe es, komplexe
-          Probleme zu analysieren, kreative Konzepte zu entwickeln und diese mit modernen
+          Probleme zu analysieren, systematisch Lösungen zu entwickeln und diese mit modernen
           Technologien umzusetzen. Mein Weg führte mich von der Linguistik und
           Informationswissenschaft über die Medieninformatik hin zu interdisziplinären Projekten
-          im Bereich Digitalisierung und E‑Learning.
+          im Bereich Digitalisierung, E-Learning und Co-Creation. Aktuell schreibe ich meine Masterarbeit im Bereich Data Science.
         </p>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-          In meiner aktuellen Rolle als wissenschaftliche Mitarbeiterin gestalte ich innovative
-          Wissensplattformen mit und koordiniere Entwicklerteams. Neben der Arbeit bilde ich mich
-          stetig weiter, schreibe meine Masterarbeit in Medieninformatik und teile mein Wissen als
-          Tutorin und Dozentin. Reisen, Tanzen und Singen geben mir Inspiration und Ausgleich.
+          Ich lebe auf der Sonnenseite und gebe begeistert alles, besonders wenn ich Interesse, Spaß und Freude an einer Aufgabe habe.
+          Was ich am liebsten mache und wirklich gut kann: verstehen, was andere wollen, erkennen, was nötig ist, um genau das zu erreichen, und mir das dafür nötige Wissen in kurzer Zeit anzueignen.
+          Ich bin kommunikativ und aufgeschlossen, brauche zum Ausgleich gelegentlich Zeit als einsamer Wolf, bin neugierig auf Medien, Technik und Entwicklung, habe Lust darauf, konstruktiv und produktiv zu arbeiten, und bin überzeugt davon, dass sich der Rest von selbst daraus ergibt.
+          Reisen, Tanzen und Singen geben mir Inspiration und Ausgleich.
         </p>
       </div>
     </section>

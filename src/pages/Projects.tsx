@@ -9,14 +9,14 @@ interface ProjectCard {
 
 const professionalProjects: ProjectCard[] = [
   {
-    title: 'Webentwicklung – Wissenschaftliche Mitarbeiterin',
+    title: 'Webentwicklung CoCre-HIT-Kompendium – Wissenschaftliche Mitarbeiterin',
     description:
       'Teamkoordination, Workshop‑Moderation, Anforderungsanalyse, Informationsarchitektur, Leitung Programmierteam und Webentwicklung zur Erstellung einer digitalen Wissensplattform für partizipative Technikentwicklung im Gesundheitsbereich.',
-    technologies: ['Web Development', 'Project Management', 'UX/UI Design', 'Team Coordination'],
+    technologies: ['Web Development', 'Project Management', 'UX/UI Design', 'Team Coordination', 'Team Lead'],
     link: 'https://cocre-hit.de/kompendium',
   },
   {
-    title: 'E‑Learning – Wissenschaftliche Mitarbeiterin',
+    title: 'Datenbanken E‑Learning-Module – Wissenschaftliche Mitarbeiterin',
     description:
       'Analyse, Mediendidaktik, Entwicklung und Evaluation von Lernmodulen im Fach Datenbanken.',
     technologies: ['E‑Learning', 'Database Design', 'Educational Technology'],
@@ -36,13 +36,13 @@ const professionalProjects: ProjectCard[] = [
   },
   {
     title: 'Assistenz / kommissarische Leitung',
-    description: 'Administrative Tätigkeiten und kommissarische Leitung verschiedener Projekte am IIK Düsseldorf e.V.',
-    technologies: ['Administration', 'Leadership', 'Project Coordination'],
+    description: 'Assistenz / Kommissarische Leitung der Marketing-Abteilung am IIK Düsseldorf e.V.',
+    technologies: ['Marketing', 'Team Lead', 'Project Coordination'],
     link: undefined,
   },
   {
     title: 'Projektleitung Eventmanagement',
-    description: 'Planung und Durchführung von Veranstaltungen beim IIK e.V.',
+    description: 'Planung, Durchführung, Disposition, Umsetzung, Budgetplanung für jährlich ca. 200 Freizeit- und Kulturveranstaltungen beim IIK e.V.',
     technologies: ['Event Management', 'Team Leadership'],
     link: undefined,
   },
