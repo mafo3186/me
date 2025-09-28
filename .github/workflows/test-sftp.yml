@@ -1,0 +1,32 @@
+name: Test SFTP Recursive Upload
+
+on:
+  workflow_dispatch:   # manuell auslösbar
+
+jobs:
+  deploy-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create dummy test folder with nested structure
+        run: |
+          mkdir -p test-out/level1/level2
+          echo "Root index" > test-out/index.html
+          echo "Nested file" > test-out/level1/level2/nested.txt
+          ls -R test-out
+
+      - name: Deploy dummy folder via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          port: 2222
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PW }}
+          local_path: ./test-out
+          remote_path: /test-deploy
+          sftp_only: true
+          remove_extra_files: false
+          delete_remote_files: false
