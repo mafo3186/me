@@ -39,7 +39,7 @@ jobs:
           ls -R test-out
 
       - name: FTP Deploy (create test structure)
-        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -59,7 +59,7 @@ jobs:
           ls -R test-out
 
       - name: FTP Deploy (sync and delete extra files)
-        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.0
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
