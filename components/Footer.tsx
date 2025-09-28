@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -8,8 +8,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-gray-600 dark:text-gray-400 space-y-2">
         <p>&copy; {year} Mareike Focken. Alle Rechte vorbehalten.</p>
         <p>
-          <Link to="/imprint" className="hover:underline">Impressum</Link> ·{' '}
-          <Link to="/privacy" className="hover:underline">Datenschutz</Link>
+          <Link href="/imprint" className="hover:underline">Impressum</Link> ·{' '}
+          <Link href="/privacy" className="hover:underline">Datenschutz</Link>
         </p>
       </div>
     </footer>

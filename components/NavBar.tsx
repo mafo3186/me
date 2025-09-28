@@ -1,5 +1,8 @@
+'use client'
+
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface NavBarProps {
   theme: string;
@@ -8,6 +11,7 @@ interface NavBarProps {
 
 export default function NavBar({ theme, onToggleTheme }: NavBarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
     { path: '/', label: 'Home' },
@@ -16,14 +20,16 @@ export default function NavBar({ theme, onToggleTheme }: NavBarProps) {
     { path: '/contact', label: 'Kontakt' },
   ];
 
+  const isActive = (path: string) => pathname === path;
+
   return (
     // Erhöhte z‑Index, damit die Navigation beim Scrollen stets über dem Inhalt bleibt
     <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur sticky top-0 z-20 border-b border-gray-200 dark:border-gray-700">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex items-center flex-shrink-0 text-lg font-semibold">
-          <NavLink to="/" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-200 transition-colors">
+          <Link href="/" className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-200 transition-colors">
             Mareike&nbsp;Focken
-          </NavLink>
+          </Link>
         </div>
         <div className="flex md:hidden">
           <button
@@ -54,17 +60,16 @@ export default function NavBar({ theme, onToggleTheme }: NavBarProps) {
         </div>
         <div className="hidden md:flex md:items-center md:space-x-6">
           {navItems.map((item) => (
-            <NavLink
+            <Link
               key={item.path}
-              to={item.path}
-              className={({ isActive }) =>
-                `px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive
+              href={item.path}
+              className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive(item.path)
                   ? 'bg-indigo-100 dark:bg-indigo-800 text-indigo-700 dark:text-indigo-200'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100'}`
               }
             >
               {item.label}
-            </NavLink>
+            </Link>
           ))}
           <button
             onClick={onToggleTheme}
@@ -90,18 +95,17 @@ export default function NavBar({ theme, onToggleTheme }: NavBarProps) {
       {mobileMenuOpen && (
         <div className="md:hidden px-4 pb-3 space-y-1 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
           {navItems.map((item) => (
-            <NavLink
+            <Link
               key={item.path}
-              to={item.path}
+              href={item.path}
               onClick={() => setMobileMenuOpen(false)}
-              className={({ isActive }) =>
-                `block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive
+              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive(item.path)
                   ? 'bg-indigo-100 dark:bg-indigo-800 text-indigo-700 dark:text-indigo-200'
                   : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100'}`
               }
             >
               {item.label}
-            </NavLink>
+            </Link>
           ))}
           <button
             onClick={() => {
