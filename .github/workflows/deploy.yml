@@ -46,7 +46,7 @@ jobs:
           password: ${{ secrets.FTP_PW }}
           protocol: ftp
           port: 21
-          local-dir: ./test-out
+          local-dir: ./test-out/
           server-dir: /test-deploy/
           dangerous-clean-slate: true
 
@@ -66,6 +66,6 @@ jobs:
           password: ${{ secrets.FTP_PW }}
           protocol: ftp
           port: 21
-          local-dir: ./test-out
+          local-dir: ./test-out/
           server-dir: /test-deploy/
           dangerous-clean-slate: true
