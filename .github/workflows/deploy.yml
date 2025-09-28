@@ -24,12 +24,13 @@ jobs:
           remote_path: /        # Root der Domain
           sftp_only: true
 
-  deploy-test:
+  deploy-test-ftp:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 1 Upload mit verschachtelten Ordnern
       - name: Create dummy test folder with nested structure
         run: |
           mkdir -p test-out/level1/level2
@@ -37,15 +38,34 @@ jobs:
           echo "Nested file" > test-out/level1/level2/nested.txt
           ls -R test-out
 
-      - name: Deploy dummy folder via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: FTP Deploy (create test structure)
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
-          port: 2222
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PW }}
-          local_path: ./test-out
-          remote_path: /test-deploy   # separater Ordner, sicher für Tests
-          sftp_only: true
-          remove_extra_files: false
-          delete_remote_files: false
+          protocol: ftp
+          port: 21
+          local-dir: ./test-out
+          server-dir: /test-deploy/
+          dangerous-clean-slate: true
+
+      # 2 Upload mit reduzierter Struktur (löschen testen)
+      - name: Create reduced dummy folder (no nested dirs)
+        run: |
+          rm -rf test-out
+          mkdir -p test-out
+          echo "Reduced index" > test-out/index.html
+          ls -R test-out
+
+      - name: FTP Deploy (sync and delete extra files)
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PW }}
+          protocol: ftp
+          port: 21
+          local-dir: ./test-out
+          server-dir: /test-deploy/
+          dangerous-clean-slate: true
