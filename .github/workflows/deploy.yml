@@ -3,7 +3,7 @@ name: Deploy static site to NetBeat
 on:
   push:
     branches:
-      - main
+      - 20-update-deployment # for testing only
 
 jobs:
   deploy:
@@ -20,6 +20,6 @@ jobs:
           port: 2222
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PW }}
-          local_path: ./dist/*   # Website-Ordner
+          local_path: ./out/*   # Website-Ordner
           remote_path: /           # Root der Domain
           sftp_only: true
