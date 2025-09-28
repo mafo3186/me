@@ -3,7 +3,7 @@ name: Deploy static site to NetBeat
 on:
   push:
     branches:
-      - 20-update-deployment   # testing only
+      - main
 
 jobs:
   deploy:
