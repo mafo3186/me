@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -12,6 +12,12 @@ interface NavBarProps {
 export default function NavBar({ theme, onToggleTheme }: NavBarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navItems = [
     { path: '/', label: 'Home' },
@@ -72,23 +78,27 @@ export default function NavBar({ theme, onToggleTheme }: NavBarProps) {
             </Link>
           ))}
           <button
-            onClick={onToggleTheme}
-            className="ml-4 p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            aria-label="Farbmodus umschalten"
+              onClick={onToggleTheme}
+              className="ml-4 p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              aria-label="Farbmodus umschalten"
           >
-            {theme === 'dark' ? (
-              // Sun icon for dark mode
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M10 15a5 5 0 100-10 5 5 0 000 10z" />
-                <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm0 13a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm8-5a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM4 10a1 1 0 011 1H4a1 1 0 110-2h1a1 1 0 01-1 1zm11.657-6.657a1 1 0 010 1.414L15.414 6a1 1 0 01-1.414-1.414l1.243-1.243a1 1 0 011.414 0zM6 15.414a1 1 0 011.414 0L8.657 14.17a1 1 0 10-1.414-1.414L6 14a1 1 0 010 1.414zm9.414 1.414a1 1 0 010-1.414L15.414 14a1 1 0 111.414 1.414l-1.243 1.243a1 1 0 01-1.414 0zM4.586 4.586a1 1 0 011.414 0L7.243 6a1 1 0 11-1.414 1.414L4.586 6a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
+            {!mounted ? (
+                // Platzhalter, damit Server + Client gleich sind
+                <div className="h-5 w-5" />
+            ) : theme === 'dark' ? (
+                // Sun icon for dark mode
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M10 15a5 5 0 100-10 5 5 0 000 10z" />
+                  <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm0 13a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm8-5a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM4 10a1 1 0 011 1H4a1 1 0 110-2h1a1 1 0 01-1 1zm11.657-6.657a1 1 0 010 1.414L15.414 6a1 1 0 01-1.414-1.414l1.243-1.243a1 1 0 011.414 0zM6 15.414a1 1 0 011.414 0L8.657 14.17a1 1 0 10-1.414-1.414L6 14a1 1 0 010 1.414zm9.414 1.414a1 1 0 010-1.414L15.414 14a1 1 0 111.414 1.414l-1.243 1.243a1 1 0 01-1.414 0zM4.586 4.586a1 1 0 011.414 0L7.243 6a1 1 0 11-1.414 1.414L4.586 6a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
             ) : (
-              // Moon icon for light mode
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M17.293 13.293a1 1 0 011.414 0 8.001 8.001 0 11-10.586-10.586 1 1 0 010 1.414 6 6 0 108.172 8.172z" />
-              </svg>
+                // Moon icon for light mode
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M17.293 13.293a1 1 0 011.414 0 8.001 8.001 0 11-10.586-10.586 1 1 0 010 1.414 6 6 0 108.172 8.172z" />
+                </svg>
             )}
           </button>
+
         </div>
       </nav>
       {/* Mobile menu */}
