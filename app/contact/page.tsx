@@ -12,7 +12,7 @@ export default function Contact() {
           <strong>Telefon:</strong> <a href="tel:+491795659567" className="hover:underline">+49&nbsp;179&nbsp;56&nbsp;59&nbsp;567</a>
         </p>
         <p>
-          <strong>E‑Mail:</strong> <a href="mailto:kontakt@mareikefocken.de" className="hover:underline">kontakt@mareikefocken.de</a>
+          <strong>E‑Mail:</strong> <a href="mailto:ping@mareikefocken.de" className="hover:underline">ping@mareikefocken.de</a>
         </p>
         <p>
           <strong>LinkedIn:</strong>{' '}
