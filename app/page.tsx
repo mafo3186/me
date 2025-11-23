@@ -24,8 +24,7 @@ export default function Home() {
           <p className="mb-8 text-lg sm:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
             Mit langjähriger Erfahrung in interdisziplinärer Projektarbeit verbinde ich
             Technik, Kreativität und Teamarbeit, um digitale Lösungen zu entwickeln,
-            die Menschen begeistern. Spezialisiert auf Webentwicklung, E‑Learning und
-            Datenanalyse bringe ich Projekte von der Idee bis zur Umsetzung zum Erfolg.
+            die Menschen sinnvoll unterstützen. Mit klarer Kommunikation, analytischer Stärke und technischer Kompetenz bringe ich Projekte von der Idee bis zur Umsetzung zum Erfolg.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <Link
