@@ -14,7 +14,7 @@ export default function Imprint() {
       <p className="mb-4 text-gray-700 dark:text-gray-300">
         Kontakt:<br />
         Telefon: <a href="tel:+491795659567" className="hover:underline">+49&nbsp;179&nbsp;56&nbsp;59&nbsp;567</a><br />
-        E‑Mail: <a href="mailto:kontakt@mareikefocken.de" className="text-indigo-600 dark:text-indigo-400 hover:underline">kontakt@mareikefocken.de</a>
+        E‑Mail: <a href="mailto:ping@mareikefocken.de" className="text-indigo-600 dark:text-indigo-400 hover:underline">ping@mareikefocken.de</a>
       </p>
       <p className="mb-4 text-gray-700 dark:text-gray-300">
         Verantwortlich für den Inhalt nach § 55 Abs. 2&nbsp;RStV: Mareike&nbsp;Focken, Anschrift wie oben.
