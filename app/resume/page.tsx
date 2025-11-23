@@ -19,20 +19,20 @@ interface Education {
 }
 
 export default function Resume() {
-  const currentDate = '27.09.2025';
+  const currentDate = '23.11.2025';
 
   const experiences: Experience[] = [
     {
       title: 'Webentwicklung – Wissenschaftliche Mitarbeiterin',
       organization: 'HS Düsseldorf',
-      period: '01/2024 – 07/2025',
+      period: '2024 – 2025',
       description:
         'Teamkoordination, Workshop‑Moderation, Anforderungsanalyse, Informationsarchitektur, Leitung Programmierteam und Webentwicklung zur Erstellung einer digitalen Wissensplattform für partizipative Technikentwicklung im Gesundheitsbereich.',
     },
     {
       title: 'E‑Learning – Wissenschaftliche Mitarbeiterin',
       organization: 'HS Düsseldorf',
-      period: '01/2021 – 12/2023',
+      period: '2021 – 2023',
       description: 'Analyse, Mediendidaktik, Entwicklung und Evaluation von Lernmodulen im Fach Datenbanken.',
     },
     {
