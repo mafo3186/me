@@ -14,21 +14,21 @@ const professionalProjects: ProjectCard[] = [
     title: 'Webentwicklung CoCre-HIT-Kompendium – Wissenschaftliche Mitarbeiterin',
     description:
       'Teamkoordination, Workshop‑Moderation, Anforderungsanalyse, Informationsarchitektur, Leitung Programmierteam und Webentwicklung zur Erstellung einer digitalen Wissensplattform für partizipative Technikentwicklung im Gesundheitsbereich.',
-    technologies: ['Web Development', 'Project Management', 'UX/UI Design', 'Team Coordination', 'Team Lead'],
+    technologies: ['Project Management', 'Team Coordination', 'Team Lead','Web Development', 'RequirementsEngineering', 'React', 'TypeScript','JSON', 'CI/CD'],
     link: 'https://cocre-hit.de/kompendium',
   },
   {
     title: 'Datenbanken E‑Learning-Module – Wissenschaftliche Mitarbeiterin',
     description:
       'Analyse, Mediendidaktik, Entwicklung und Evaluation von Lernmodulen im Fach Datenbanken.',
-    technologies: ['E‑Learning', 'Database Design', 'Educational Technology'],
+    technologies: ['E‑Learning', 'Database Design', 'Open Educational Resources (OER)', 'LMS', 'Web Development' ],
     link: 'https://eild.nrw',
   },
   {
     title: 'Website Relaunch Projekt IIK',
     description:
       'Kompletter Relaunch der IIK Deutschland Website mit moderner Technologie und nutzerfreundlichem Design.',
-    technologies: ['Web Development', 'Project Management', 'UX/UI Design'],
+    technologies: ['Project Management', 'UX/UI Design', 'Prototyping', 'Typo3', 'Magento', 'HTML', 'CSS'],
     link: 'https://iik-deutschland.de',
   },
   {
@@ -62,21 +62,21 @@ const studentProjects: ProjectCard[] = [
     title: 'Wir sollten viel mehr reisen',
     description:
       'Interaktives Flowchart zur Reflexion des Themas "Fremde überall" anlässlich der 60. Kunst‑Biennale in Venedig 2024. Erkunden Sie das Diagramm und entdecken Sie neue Perspektiven auf Reisen und Fremdheit.',
-    technologies: ['React', 'JavaScript', 'HTML', 'CSS'],
+    technologies: ['Interactive Flowchart','HTML', 'CSS','CI/CD'],
     link: 'https://mafo3186.github.io/wir-sollten-viel-mehr-reisen/',
   },
   {
     title: 'Venezia Website',
     description:
       'Moderne Website zur 60. Kunst‑Biennale in Venedig 2024 mit interaktiven Inhalten. Sie kombiniert klare Gestaltung mit kreativen Elementen, um Besucher über das Thema "Fremde überall" zu informieren.',
-    technologies: ['HTML', 'CSS', 'JavaScript'],
+    technologies: ['Web Development','UI/UX', 'React', 'TypeScript', 'Next.js', 'Sanity', 'CI/CD', 'HTML', 'CSS', ],
     link: 'https://venezia-website.vercel.app/',
   },
   {
     title: 'Student Timer',
     description:
       'React‑Native‑App für Android und iOS zur Überwachung und Organisation des eigenen Lernverhaltens. Der Backend‑Service basiert auf Java Spring Boot und einer PostgreSQL‑Datenbank.',
-    technologies: ['JavaScript', 'Web Development', 'Mobile App'],
+    technologies: ['Mobile App', 'React Native', 'Java' ],
     link: 'https://github.com/mafo3186/StudentTimer',
   },
 ];
