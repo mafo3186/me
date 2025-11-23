@@ -101,7 +101,7 @@ export default function Resume() {
     },
   ];
 
-  const skills = ['Python (ML/DL)', 'Java', 'Typescript', 'Javascript', 'React/Next.js', 'HTML5', 'CSS/Tailwind', 'SQL', 'Git', 'Adobe Suite'];
+  const skills = ['Python (ML/DL)', 'Java', 'Typescript', 'Javascript', 'React/Next.js', 'HTML5', 'CSS/Tailwind', 'SQL', 'Git', 'GitHub CoPilot','Adobe Suite'];
   const methods = ['Scrum / Agile Methoden', 'Requirements Engineering', 'Workshop‑Moderation', 'Prompting', 'Kommunikativ', 'Lösungsorientiert', 'Lernfähig'];
   const languages = ['Deutsch (Muttersprache)', 'Englisch (C1)', 'Französisch (B2)', 'Spanisch (A2)'];
   const interests = ['Reisen', 'Tanzen', 'Singen', 'KI: Machine/Deep Learning', 'Sinnvolle Digitalisierung'];
@@ -116,7 +116,7 @@ export default function Resume() {
         <div className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 flex flex-col gap-6 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm py-6">
           <div className="text-center px-6">
             <div className="leading-none font-semibold text-lg">Mareike&nbsp;Focken</div>
-            <div className="text-sm text-gray-500 dark:text-gray-400">Webentwicklerin &amp; Data Scientist&nbsp;| AI&nbsp;Enthusiast</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400">Software- &amp; Webentwicklerin&nbsp;| Data Science &amp; AI&nbsp;Enthusiastin</div>
             <div className="text-xs text-gray-400 dark:text-gray-500 mt-1">Stand: {currentDate}</div>
           </div>
           <div className="px-6 space-y-8">
@@ -241,7 +241,7 @@ export default function Resume() {
           {/* PDF Download Button */}
           <div className="px-6">
             <a
-              href="/resume-placeholder.pdf"
+              href="/CV_mf.pdf"
               download
               className="inline-block px-4 py-2 mt-4 rounded-md text-sm font-medium text-indigo-600 dark:text-indigo-400 border border-indigo-600 dark:border-indigo-400 hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-500 transition-colors"
             >
