@@ -59,6 +59,13 @@ const professionalProjects: ProjectCard[] = [
 
 const studentProjects: ProjectCard[] = [
   {
+    title: 'A Data-Driven Audio Processing Pipeline for Isolating Non-Verbal Vocalizations from In-the-Wild Recordings',
+    description:
+      'The NVV Isolation Pipeline isolates human non-verbal vocalization (NVV) candidate segments from unlabeled in-the-wild audio recordings without relying on predefined NVV categories or NVV-specific supervised training.',
+    technologies: ['Python','Jupyter Notebook', 'Audio Processing','Automatization', 'Data-Driven Approach', 'ASR', 'NLP', 'VAD', 'SED'],
+    link: 'https://github.com/mafo3186/nvv-isolation-pipeline',
+  },
+  {
     title: 'Wir sollten viel mehr reisen',
     description:
       'Interaktives Flowchart zur Reflexion des Themas "Fremde überall" anlässlich der 60. Kunst‑Biennale in Venedig 2024. Erkunden Sie das Diagramm und entdecken Sie neue Perspektiven auf Reisen und Fremdheit.',
@@ -83,6 +90,7 @@ const studentProjects: ProjectCard[] = [
 
 export default function Projects() {
   const [showMore, setShowMore] = useState(false);
+  const [showMoreStudents, setShowMoreStudents] = useState(false);
 
   const renderProjectCard = (project: ProjectCard) => (
     <div
@@ -137,8 +145,18 @@ export default function Projects() {
       )}
       <h3 className="text-2xl font-bold mb-8 text-gray-900 dark:text-white text-center">Studentische Projekte</h3>
       <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {studentProjects.map((project) => renderProjectCard(project))}
+        {(showMoreStudents ? studentProjects : studentProjects.slice(0, 3)).map((project) => renderProjectCard(project))}
       </div>
+      {studentProjects.length > 3 && (
+        <div className="text-center mt-8">
+          <button
+            onClick={() => setShowMoreStudents(!showMoreStudents)}
+            className="inline-block px-4 py-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 border border-indigo-600 dark:border-indigo-400 rounded-md hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-500 transition-colors"
+          >
+            {showMoreStudents ? 'Weniger anzeigen' : 'Mehr anzeigen'}
+          </button>
+        </div>
+      )}
     </section>
   );
 }
