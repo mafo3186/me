@@ -46,12 +46,12 @@ export default function Home() {
       <div className="max-w-4xl mx-auto py-16 px-4">
         <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Über mich</h2>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-          Als leidenschaftliche Entwicklerin, Wissenschaftlerin und Projektleiterin arbeite ich an der Schnittstelle
-          von Webentwicklung, Data Science und Machine Learning. Ich liebe es, komplexe
+          Als leidenschaftliche Entwicklerin, Wissenschaftlerin, Projektleiterin und Consultant arbeite ich an der Schnittstelle
+          von Webentwicklung, Machine Learning und KI-gestützten Anwendungen. Ich liebe es, komplexe
           Probleme zu analysieren, systematisch Lösungen zu entwickeln und diese mit modernen
           Technologien umzusetzen. Mein Weg führte mich von der Linguistik und
           Informationswissenschaft über die Medieninformatik hin zu interdisziplinären Projekten
-          im Bereich Digitalisierung, E-Learning und Co-Creation. Aktuell schreibe ich meine Masterarbeit im Bereich Data Science.
+          im Bereich Digitalisierung, E-Learning und Co-Creation. Aktuell arbeite ich als Consultant im Bereich AI & Development.
         </p>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
           Ich lebe auf der Sonnenseite und gebe begeistert alles, besonders wenn ich Interesse, Spaß und Freude an einer Aufgabe habe.
