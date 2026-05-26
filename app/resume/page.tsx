@@ -15,13 +15,22 @@ interface Education {
   institution: string;
   period: string;
   description: string;
+  thesis?: string;
   current?: boolean;
 }
 
 export default function Resume() {
-  const currentDate = '23.11.2025';
+  const currentDate = '26.05.2026';
 
   const experiences: Experience[] = [
+    {
+      title: 'AI & Development - Consultant',
+      organization: 'ProcuVia AG',
+      period: 'seit 05/2026',
+      description:
+        'Beratung und Entwicklung von KI-gestützten Lösungen für Kundenprojekte, einschließlich Anforderungsanalyse, Implementierung und Schulung zu KI-Technologien.',
+      current: true, 
+    },
     {
       title: 'Webentwicklung – Wissenschaftliche Mitarbeiterin',
       organization: 'HS Düsseldorf',
@@ -75,11 +84,12 @@ export default function Resume() {
 
   const educations: Education[] = [
     {
-      title: 'M.Sc. Medieninformatik (berufsbegleitend)',
+      title: 'M.Sc. Medieninformatik',
       institution: 'HSD',
-      period: '2023 – 2026 (Abschluss voraussichtlich 04/2026)',
-      description: '65 ECTS‑Punkte (Ø = 1,0)',
-      current: true,
+      period: '2023 – 2026 (Abschluss 05/2026)',
+      description: 'Master of Science (M.Sc.) | Note: 1,0',
+      thesis: 'A Data-Driven Audio Processing Pipeline for Isolating Non-Verbal Vocalizations from In-the-Wild Recordings',
+      current: false,
     },
     {
       title: 'B.Sc. Medieninformatik',
@@ -101,7 +111,7 @@ export default function Resume() {
     },
   ];
 
-  const skills = ['Python (ML/DL)', 'Java', 'Typescript', 'Javascript', 'React/Next.js', 'HTML5', 'CSS/Tailwind', 'SQL', 'Git', 'GitHub CoPilot','Adobe Suite'];
+  const skills = ['Python (ML/DL)', 'Java', 'Typescript', 'Javascript', 'React/Next.js', 'HTML5', 'CSS/Tailwind', 'SQL', 'Git', 'GitHub CoPilot', 'Claude Code', 'Adobe Suite'];
   const methods = ['Scrum / Agile Methoden', 'Requirements Engineering', 'Workshop‑Moderation', 'Prompting', 'Kommunikativ', 'Lösungsorientiert', 'Lernfähig'];
   const languages = ['Deutsch (Muttersprache)', 'Englisch (C1)', 'Französisch (B2)', 'Spanisch (A2)'];
   const interests = ['Reisen', 'Tanzen', 'Singen', 'KI: Machine/Deep Learning', 'Sinnvolle Digitalisierung'];
@@ -127,7 +137,7 @@ export default function Resume() {
                 {(showMoreExp ? experiences : experiences.slice(0, 4)).map((exp, idx) => (
                   <div
                     key={idx}
-                    className={`border-l-2 pl-4 border-gray-300 dark:border-gray-600`}
+                    className={`border-l-2 pl-4 ${exp.current ? 'border-indigo-600 dark:border-indigo-400' : 'border-gray-300 dark:border-gray-600'}`}
                   >
                     <div className="flex flex-col md:flex-row md:items-start md:gap-4">
                       {/* Zeitraum */}
@@ -171,6 +181,10 @@ export default function Resume() {
                         <h4 className="font-medium text-gray-900 dark:text-white">{edu.title}</h4>
                         <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">{edu.institution}</p>
                         <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{edu.description}</p>
+                        {edu.thesis && (
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 italic">Thesis: {edu.thesis}</p>
+                         )  
+                        }
                       </div>
                     </div>
                   </div>
