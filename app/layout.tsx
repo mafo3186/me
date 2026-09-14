@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import './globals.css';
+import { getInitialLanguage, Language, LanguageProvider, LANGUAGE_STORAGE_KEY } from './language-context';
 
 export default function RootLayout({
   children,
@@ -22,6 +23,7 @@ export default function RootLayout({
   };
 
   const [theme, setTheme] = useState<string>(getInitialTheme);
+  const [language, setLanguage] = useState<Language>(getInitialLanguage);
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -33,26 +35,40 @@ export default function RootLayout({
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+  useEffect(() => {
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+  }, [language]);
+
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
 
   return (
-    <html lang="de">
+    <html lang={language}>
       <head>
         <meta charSet="UTF-8" />
         <link rel="icon" type="image/png" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content={
+            language === 'de'
+              ? 'Portfolio von Mareike Focken – Software- und Webentwicklung, Data Science und KI.'
+              : 'Portfolio of Mareike Focken – software and web development, data science and AI.'
+          }
+        />
         <title>Mareike Focken – Portfolio</title>
       </head>
       <body className="font-sans antialiased bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
-        <div className="flex flex-col min-h-screen">
-          <NavBar theme={theme} onToggleTheme={toggleTheme} />
-          <main className="flex-1">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <LanguageProvider value={{ language, setLanguage }}>
+          <div className="flex flex-col min-h-screen">
+            <NavBar theme={theme} onToggleTheme={toggleTheme} />
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );
