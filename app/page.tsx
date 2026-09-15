@@ -23,7 +23,7 @@ export default function Home() {
       resumeCta: 'Resume',
       aboutTitle: 'About me',
       aboutParagraph1: 'As a passionate developer, researcher, project lead, and consultant, I work at the intersection of web development, machine learning, and AI-powered applications. I love analyzing complex problems, designing structured solutions, and implementing them with modern technologies. My journey has taken me from linguistics and information science to media informatics and interdisciplinary projects in digitalization, e-learning, and co-creation. I currently work as a consultant in AI & development.',
-      aboutParagraph2: 'I am an optimistic person and give my best—especially when a task sparks my curiosity and joy. What I do best is understanding what people really need, identifying what is required to achieve it, and quickly acquiring the knowledge needed along the way. I am communicative and open-minded, occasionally need quiet time to recharge, stay curious about media, technology, and development, and enjoy working constructively and productively. Traveling, dancing, and singing provide inspiration and balance.',
+      aboutParagraph2: 'I am an optimistic person and give my best, especially when a task sparks my curiosity and joy. What I do best is understanding what people really need, identifying what is required to achieve it, and quickly acquiring the knowledge needed along the way. I am communicative and open-minded, occasionally need quiet time to recharge, stay curious about media, technology, and development, and enjoy working constructively and productively. Traveling, dancing, and singing provide inspiration and balance.',
     };
 
   return (

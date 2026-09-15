@@ -59,14 +59,14 @@ const professionalProjectsDe: ProjectCard[] = [
 
 const professionalProjectsEn: ProjectCard[] = [
   {
-    title: 'CoCre-HIT Compendium Web Development – Research Associate',
+    title: 'CoCre-HIT Compendium Web Development, Research Associate',
     description:
       'Team coordination, workshop facilitation, requirements analysis, information architecture, programming team leadership, and web development for a digital knowledge platform on participatory technology development in healthcare.',
     technologies: ['Project Management', 'Team Coordination', 'Team Lead', 'Web Development', 'Requirements Engineering', 'React', 'TypeScript', 'JSON', 'CI/CD'],
     link: 'https://cocre-hit.de/kompendium',
   },
   {
-    title: 'Database E‑Learning Modules – Research Associate',
+    title: 'Database E‑Learning Modules, Research Associate',
     description:
       'Analysis, instructional design, development, and evaluation of learning modules in the field of databases.',
     technologies: ['E‑Learning', 'Database Design', 'Open Educational Resources (OER)', 'LMS', 'Web Development'],
@@ -80,7 +80,7 @@ const professionalProjectsEn: ProjectCard[] = [
     link: 'https://iik-deutschland.de',
   },
   {
-    title: 'OOP (Java) – Subject Tutor',
+    title: 'OOP (Java), Subject Tutor',
     description: 'Subject tutor for object-oriented programming in Java at Düsseldorf University of Applied Sciences.',
     technologies: ['Java', 'Object‑Oriented Programming', 'Teaching'],
   },
@@ -97,7 +97,7 @@ const professionalProjectsEn: ProjectCard[] = [
     link: undefined,
   },
   {
-    title: 'Tango Argentino – Instructor',
+    title: 'Tango Argentino, Instructor',
     description: 'Freelance Tango Argentino instructor since 2007 (including at tanzhaus nrw).',
     technologies: ['Teaching', 'Dance'],
     link: 'https://tangold.de/',

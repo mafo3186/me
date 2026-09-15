@@ -54,10 +54,10 @@ export default function RootLayout({
           content={
             language === 'de'
               ? 'Portfolio von Mareike Focken – Software- und Webentwicklung, Data Science und KI.'
-              : 'Portfolio of Mareike Focken – software and web development, data science and AI.'
+              : 'Portfolio of Mareike Focken: software and web development, data science and AI.'
           }
         />
-        <title>Mareike Focken – Portfolio</title>
+        <title>Mareike Focken | Portfolio</title>
       </head>
       <body className="font-sans antialiased bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
         <LanguageProvider value={{ language, setLanguage }}>
