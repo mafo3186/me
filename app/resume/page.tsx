@@ -69,7 +69,7 @@ const experiencesDe: Experience[] = [
   {
     title: 'Projektleitung Eventmanagement',
     organization: 'IIK e. V.',
-    period: '2010 – 2017',
+    period: '2007 – 2017',
     description: 'Planung und Durchführung von Veranstaltungen.',
   },
   {
@@ -129,7 +129,7 @@ const experiencesEn: Experience[] = [
   {
     title: 'Event Management Project Lead',
     organization: 'IIK e.V.',
-    period: '2010 to 2017',
+    period: '2007 to 2017',
     description: 'Planning and execution of events.',
   },
   {
@@ -205,7 +205,7 @@ export default function Resume() {
 
   const text = isGerman
     ? {
-      currentDate: '26.05.2026',
+      currentDate: '15.09.2026',
       title: 'Lebenslauf',
       subtitle: 'Software- & Webentwicklerin | Data Science & AI Enthusiastin',
       updated: 'Stand',
@@ -218,14 +218,14 @@ export default function Resume() {
       more: 'Mehr anzeigen',
       less: 'Weniger anzeigen',
       thesis: 'Thesis',
-      downloadPdf: 'PDF herunterladen',
+      downloadPdf: 'PDF herunterladen (DE)',
       skillsList: ['Python (ML/DL)', 'Java', 'Typescript', 'Javascript', 'React/Next.js', 'HTML5', 'CSS/Tailwind', 'SQL', 'Git', 'GitHub CoPilot', 'Claude Code', 'Adobe Suite'],
       methodsList: ['Scrum / Agile Methoden', 'Requirements Engineering', 'Workshop‑Moderation', 'Prompting', 'Kommunikativ', 'Lösungsorientiert', 'Lernfähig'],
       languagesList: ['Deutsch (Muttersprache)', 'Englisch (C1)', 'Französisch (B2)', 'Spanisch (A2)'],
       interestsList: ['Reisen', 'Tanzen', 'Singen', 'KI: Machine/Deep Learning', 'Sinnvolle Digitalisierung'],
     }
     : {
-      currentDate: '05/26/2026',
+      currentDate: '09/15/2026',
       title: 'Resume',
       subtitle: 'Software & Web Developer | Data Science & AI Enthusiast',
       updated: 'Updated',
@@ -238,7 +238,7 @@ export default function Resume() {
       more: 'Show more',
       less: 'Show less',
       thesis: 'Thesis',
-      downloadPdf: 'Download PDF',
+      downloadPdf: 'Download PDF (EN)',
       skillsList: ['Python (ML/DL)', 'Java', 'TypeScript', 'JavaScript', 'React/Next.js', 'HTML5', 'CSS/Tailwind', 'SQL', 'Git', 'GitHub Copilot', 'Claude Code', 'Adobe Suite'],
       methodsList: ['Scrum / Agile methods', 'Requirements engineering', 'Workshop facilitation', 'Prompting', 'Communicative', 'Solution-oriented', 'Fast learner'],
       languagesList: ['German (native)', 'English (C1)', 'French (B2)', 'Spanish (A2)'],
@@ -372,7 +372,7 @@ export default function Resume() {
           </div>
           <div className="px-6">
             <a
-              href="/CV_mf.pdf"
+              href={isGerman ? '/CV_mf.pdf' : '/CV_mf_en.pdf'}
               download
               className="inline-block px-4 py-2 mt-4 rounded-md text-sm font-medium text-indigo-600 dark:text-indigo-400 border border-indigo-600 dark:border-indigo-400 hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-500 transition-colors"
             >
