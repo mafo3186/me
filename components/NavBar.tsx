@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useLanguage } from '../app/language-context';
 
 interface NavBarProps {
   theme: string;
@@ -12,6 +13,7 @@ interface NavBarProps {
 export default function NavBar({ theme, onToggleTheme }: NavBarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { language, setLanguage } = useLanguage();
 
   const [mounted, setMounted] = useState(false);
 
@@ -19,12 +21,35 @@ export default function NavBar({ theme, onToggleTheme }: NavBarProps) {
     setMounted(true);
   }, []);
 
-  const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/projects', label: 'Projekte' },
-    { path: '/resume', label: 'Lebenslauf' },
-    { path: '/contact', label: 'Kontakt' },
-  ];
+  const text = language === 'de'
+    ? {
+      navItems: [
+        { path: '/', label: 'Home' },
+        { path: '/projects', label: 'Projekte' },
+        { path: '/resume', label: 'Lebenslauf' },
+        { path: '/contact', label: 'Kontakt' },
+      ],
+      menuAriaLabel: 'Menü öffnen',
+      themeAriaLabel: 'Farbmodus umschalten',
+      lightMode: 'Hell',
+      darkMode: 'Dunkel',
+      languageSwitcherLabel: 'Sprache wechseln',
+      switchLanguageAction: 'Zu Englisch wechseln',
+    }
+    : {
+      navItems: [
+        { path: '/', label: 'Home' },
+        { path: '/projects', label: 'Projects' },
+        { path: '/resume', label: 'Resume' },
+        { path: '/contact', label: 'Contact' },
+      ],
+      menuAriaLabel: 'Open menu',
+      themeAriaLabel: 'Toggle color mode',
+      lightMode: 'Light',
+      darkMode: 'Dark',
+      languageSwitcherLabel: 'Switch language',
+      switchLanguageAction: 'Switch to German',
+    };
 
   const isActive = (path: string) => pathname === path;
 
@@ -41,7 +66,7 @@ export default function NavBar({ theme, onToggleTheme }: NavBarProps) {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
-            aria-label="Menü öffnen"
+            aria-label={text.menuAriaLabel}
           >
             <svg
               className="h-6 w-6"
@@ -65,7 +90,7 @@ export default function NavBar({ theme, onToggleTheme }: NavBarProps) {
           </button>
         </div>
         <div className="hidden md:flex md:items-center md:space-x-6">
-          {navItems.map((item) => (
+          {text.navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
@@ -80,7 +105,7 @@ export default function NavBar({ theme, onToggleTheme }: NavBarProps) {
           <button
               onClick={onToggleTheme}
               className="ml-4 p-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              aria-label="Farbmodus umschalten"
+              aria-label={text.themeAriaLabel}
           >
             {!mounted ? (
                 // Platzhalter, damit Server + Client gleich sind
@@ -98,13 +123,35 @@ export default function NavBar({ theme, onToggleTheme }: NavBarProps) {
                 </svg>
             )}
           </button>
+          <div className="ml-2 inline-flex rounded-md border border-gray-300 dark:border-gray-600 overflow-hidden" role="group" aria-label={text.languageSwitcherLabel}>
+            <button
+              type="button"
+              onClick={() => setLanguage('de')}
+              className={`px-2 py-1 text-xs font-semibold transition-colors ${language === 'de'
+                ? 'bg-indigo-600 text-white'
+                : 'bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'}`}
+              aria-pressed={language === 'de'}
+            >
+              DE
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage('en')}
+              className={`px-2 py-1 text-xs font-semibold transition-colors ${language === 'en'
+                ? 'bg-indigo-600 text-white'
+                : 'bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'}`}
+              aria-pressed={language === 'en'}
+            >
+              EN
+            </button>
+          </div>
 
         </div>
       </nav>
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="md:hidden px-4 pb-3 space-y-1 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-          {navItems.map((item) => (
+          {text.navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
@@ -124,7 +171,16 @@ export default function NavBar({ theme, onToggleTheme }: NavBarProps) {
             }}
             className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100"
           >
-            {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+            {theme === 'dark' ? text.lightMode : text.darkMode}
+          </button>
+          <button
+            onClick={() => {
+              setLanguage(language === 'de' ? 'en' : 'de');
+              setMobileMenuOpen(false);
+            }}
+            className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100"
+          >
+            {text.switchLanguageAction}
           </button>
         </div>
       )}
